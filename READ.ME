@@ -1,0 +1,136 @@
+
+Download the dataset from 
+https://snap.stanford.edu/data/web-FineFoods.html 
+
+=================================================================================================
+					step 0:
+				~~~~~~~~~~~~~~~~~~~~~~~
+
+Before executing any python scipt file, place the file "english_amazon.txt" in your NLTK folder in the sub folder "stopwords". The path of the folder in Ubuntu based operating system is "/home/karthikeya/nltk_data/corpora/stopwords/english_amazon.txt".
+
+=================================================================================================
+					step 1:
+				~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the python script file "textprocessing.py". The python file reads through "Reviews.csv" file and does basic text processing
+viz. removing numbers, convert reviews to lower case and removing punctuation. It also converts reviews which are scored 4 and 5 as "positive" and reviews scored 1 and 2 as "negative". It removes reviews that are of score 3 as these reviews are contraversial as they include both positive and negative sentiment based key words and thus complicate and bias the sentiment analysis procedure.
+
+Running "textprocessing.py" produces the output file "Reviews_modified.csv" which are a modified set of reviews that are numerical free, punctuation free and are converted to lower case.
+
+=================================================================================================
+					step 2:
+				~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the python file "without_stopwords.py". The python script reads through "Reviews_modified.csv" and performs:
+1. Tokenization 
+2. Stemming (using Porter Stemmer of NLTK)
+
+The following operations are performed without removing stopwords from the reviews and hence the title of output file "without_stopwords.csv"
+
+=================================================================================================
+					step 3:
+				~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the python file "with_stopwords.py". The python script reads through "Reviews_modified.csv" and performs the following operations:
+1. Tokenization 
+2. Stemming (using Porter Stemmer of NLTK)
+3. stopword removal
+
+Stopwords list is provided by NLTK package and is titled "english.txt" in the "stopwords" folder of NLTK library. It creates output file "with_stopwords.csv"
+
+=================================================================================================
+					step 4:
+				~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the python file "custom_stopwords.py". The python script reads through "Reviews_modified.csv" and performs the following operations by removing customized stopwords from the reviews.
+1. Tokenization 
+2. Stemming (using Porter Stemmer of NLTK)
+3. customized stopword removal
+
+Stopwords have been customized i.e. few stopwords have been removed from the original list of stopwords beacuse these removed words are significant in classifying a review. Stopwords list is provided by NLTK package and is titled "english.txt" in the "stopwords" folder of NLTK library. This list has been modified and a new entry has been created titled "english_amazon.txt". Running the python file creates "custom_stopwords.csv"
+
+=================================================================================================
+					step 5:
+				~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the python file "review_summary_cv.py". This performs classification on 'Summary' attribute of reviews.
+Initially, 'Summary' attribute of reviews are read from
+1. without_stopwords.csv (where stopwords are not removed)
+2. with_stopwords.csv (where stopwords are removed)
+3. custom_stopwords.csv (customized stopwords are removed)
+
+From each of these files, summaries are read and are converted to bag of words and later, each summary which is considered as a document is converted to TF-IDF format. Upon the TF-IDF values, 5-fold cross valdation is performed and classification accuracy scores are noted.
+
+The classifiers used are: 
+1. Multinomial Naive Bayes
+2. Logistic Regression
+3. Support Vector Machines (Linear Kernel)
+
+The classifiers used are imported form scikit-learn python library.
+
+=================================================================================================
+					step 6:
+				~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the python file "review_text_cv.py". This performs classification on 'Text' attribute of reviews.
+Initially, 'Text' attribute of reviews are read from
+1. without_stopwords.csv (where stopwords are not removed)
+2. with_stopwords.csv (where stopwords are removed)
+3. custom_stopwords.csv (customized stopwords are removed)
+
+From each of these files, review text is read and all are converted to bag of words and later, each review text which is considered as a document is converted to TF-IDF format. Upon the TF-IDF values, 5-fold cross valdation is performed and classification accuracy scores are noted.
+
+The classifiers used are: 
+1. Multinomial Naive Bayes
+2. Logistic Regression
+3. Support Vector Machines (Linear Kernel)
+
+The classifiers used are imported form scikit-learn python library.
+
+=================================================================================================
+					step 7:
+				~~~~~~~~~~~~~~~~~~~~~~~
+
+Text file 'review_summary_stats.txt' is a text file that stores the results of clasiification on review summary
+Text file 'review_text_stats.txt' is a text file that stores the results of clasiification on review text
+Various metrics have been calculated viz. accuracy, precision, recall and f-measure. Classification analysis has been based on accuracy scores
+
+=================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
