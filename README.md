@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project performs binary sentiment classification on the **Amazon Fine Food Reviews** dataset, comparing whether a review's **summary** or full **text** is more effective for identifying positive and negative sentiment.
+This project performs binary sentiment classification on the **Amazon Fine Food Reviews** dataset (https://snap.stanford.edu/data/web-FineFoods.html), comparing whether a review's **summary** or full **text** is more effective for identifying positive and negative sentiment.
 
 **Dataset**
 - Original reviews: **568,454**
