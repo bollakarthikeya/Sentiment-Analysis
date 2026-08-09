@@ -49,7 +49,7 @@ The customized list retains seven sentiment-bearing words that were removed from
 
 ## Results
 
-| Model | Summary: No Removal | Summary: NLTK | Summary: Custom | Text: No Removal | Text: NLTK | Text: Custom |
+| Model | Review Summary: Stopwords Not Removed | Review Summary: NLTK Stopwords Removed | Review Summary: Custom Stopwords Removed | Review Text: Stopwords Not Removed | Review Text: NLTK Stopwords Removed | Review Text: Custom Stopwords Removed |
 |---|---:|---:|---:|---:|---:|---:|
 | Multinomial Naive Bayes | 87.101% | 84.899% | 87.123% | 88.780% | 88.333% | 88.490% |
 | Logistic Regression | 89.604% | 85.752% | 89.422% | 90.942% | 90.432% | 90.767% |
