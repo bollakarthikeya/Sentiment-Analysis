@@ -40,8 +40,8 @@ This project performs binary sentiment classification on the **Amazon Fine Food 
 Three preprocessing variants were evaluated:
 
 - Keep all stopwords
-- Remove the standard **127-word NLTK** stopword list
-- Remove a customized **120-word** list
+- Remove the stopwords provided in standard **127-word NLTK** stopword list
+- Create a customized **120-word** list and remove the stopwords 
 
 The customized list retains seven sentiment-bearing words that were removed from the standard stopword list:
 
@@ -49,19 +49,10 @@ The customized list retains seven sentiment-bearing words that were removed from
 
 ## Results
 
-| Model | Review Summary: Stopwords Not Removed | Review Summary: NLTK Stopwords Removed | Review Summary: Custom Stopwords Removed | Review Text: Stopwords Not Removed | Review Text: NLTK Stopwords Removed | Review Text: Custom Stopwords Removed |
-|---|---:|---:|---:|---:|---:|---:|
-| Multinomial Naive Bayes | 87.101% | 84.899% | 87.123% | 88.780% | 88.333% | 88.490% |
-| Logistic Regression | 89.604% | 85.752% | 89.422% | 90.942% | 90.432% | 90.767% |
-| Support Vector Machine | **90.372%** | 86.558% | 90.073% | **93.134%** | 92.622% | 93.003% |
-
-## Key Findings
-
-- **Full review text outperformed review summaries** for sentiment classification.
-- **Linear SVM achieved the highest accuracy: 93.134%** on full review text without stopword removal
-- Multinomial Naive Bayes produced the lowest accuracy among the three models.
-- Removing the complete NLTK stopword list generally reduced accuracy.
-- Retaining sentiment-bearing words such as `not`, `no`, `but`, `too`, and `very` produced results close to keeping all stopwords
+- **Review Text** outperformed **Review Summaries** for sentiment classification
+- **Linear SVM achieved the highest accuracy: 93.134%** on Review Text without removing any stopwords
+- Multinomial Naive Bayes produced the lowest accuracy among the three models
+- Retaining sentiment-bearing words such as `not`, `no`, `but`, `too`, and `very` produced results close to retaining all stopwords
 
 ## Implementation
 
@@ -71,4 +62,4 @@ The original project used:
 - **NLTK 3.1** — tokenization, stemming, stopword and special-character processing
 - **scikit-learn** — classifiers and model evaluation
 - **pandas** — data handling
-- **NumPy / SciPy** — numerical support
+- **NumPy / SciPy** — mathematical and data computation
