@@ -56,8 +56,6 @@ The customized list retains seven sentiment-bearing words that were removed from
 
 ## Implementation
 
-The original project used:
-
 - **Python 2.7**
 - **NLTK 3.1** — tokenization, stemming, stopword and special-character processing
 - **scikit-learn** — classifiers and model evaluation
