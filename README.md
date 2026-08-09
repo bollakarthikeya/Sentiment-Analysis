@@ -49,7 +49,7 @@ The customized list retains seven sentiment-bearing words that were removed from
 
 ## Results
 
-- **Review Text** outperformed **Review Summaries** for sentiment classification
+- **Review Text** outperformed **Review Summary** for sentiment classification
 - **Linear SVM achieved the highest accuracy: 93.134%** on Review Text without removing any stopwords
 - Multinomial Naive Bayes produced the lowest accuracy among the three models
 - Retaining sentiment-bearing words such as `not`, `no`, `but`, `too`, and `very` produced results close to retaining all stopwords
